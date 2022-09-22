@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@features/*": ["./src/features/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@routers/*": ["./src/routers/*"],
+      "@components/*": ["./src/lib/*"]
+    }
+  }
+}
