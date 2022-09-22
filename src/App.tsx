@@ -1,12 +1,7 @@
 import React from "react";
-import BottomTabBar from "./components/bottomTabBar";
 
 function App() {
-  return (
-    <div className="App">
-      <BottomTabBar />
-    </div>
-  );
+  return <div className="App"></div>;
 }
 
 export default App;

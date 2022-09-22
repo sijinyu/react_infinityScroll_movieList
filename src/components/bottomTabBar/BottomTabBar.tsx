@@ -2,6 +2,8 @@ import styled from "@emotion/styled";
 
 const BottomTabBar = styled.div`
   position: fixed;
+  display: flex;
+  justify-content: space-between;
   bottom: 0;
   left: 0;
   width: 100%;
