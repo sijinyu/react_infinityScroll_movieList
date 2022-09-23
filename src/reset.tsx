@@ -13,6 +13,10 @@ const reset = css`
   #root > div {
     height: 100%;
   }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 
   body {
     padding: 0 !important;
