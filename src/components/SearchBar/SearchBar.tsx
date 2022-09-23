@@ -7,7 +7,7 @@ import { handleOnKeyEnter } from "@common/utils";
 
 export interface Props {
   value: string;
-  handleChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleClick: () => void;
   loading: boolean;
 }

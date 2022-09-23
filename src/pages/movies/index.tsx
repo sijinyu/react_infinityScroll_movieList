@@ -1,3 +1,5 @@
+import MovieList from "@features/movie/MovieList";
+
 export default function Movies() {
-  return <div>asadsaadasd</div>;
+  return <MovieList />;
 }
