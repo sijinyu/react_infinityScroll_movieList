@@ -1,4 +1,4 @@
-import BottomNavContainer from "src/components/BottomNavContainer";
+import { BottomNavContainer } from "@components";
 import useBottomNav from "../hooks/useBottomNav";
 
 export default function BottomNav() {

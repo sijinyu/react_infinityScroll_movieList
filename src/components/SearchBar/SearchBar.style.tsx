@@ -2,9 +2,14 @@ import styled from "@emotion/styled";
 import { Box, InputBase } from "@mui/material";
 
 const Container = styled(Box)`
+  position: fixed;
+  top: 20px;
+  max-width: 760px;
+  width: 100%;
   display: flex;
   gap: 20px;
-  max-width: 500px;
+  background-color: white;
+  z-index: 40;
 `;
 const SearchInput = styled(InputBase)`
   display: flex;
