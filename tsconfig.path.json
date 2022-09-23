@@ -5,6 +5,7 @@
       "@pages": ["./src/pages"],
       "@routers": ["./src/routers"],
       "@components": ["./src/components"],
+      "@common/*": ["./src/common/*"],
       "@lib/*": ["./src/lib/*"]
     }
   }
