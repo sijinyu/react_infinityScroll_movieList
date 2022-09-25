@@ -1,4 +1,4 @@
-import { MovieListModel } from "./../../../features/movie/MovieList/model/index";
+import { MovieListModel } from "@features/movie/MovieList/model/index";
 import { recoilPersist } from "recoil-persist";
 
 import { atom, selector } from "recoil";
