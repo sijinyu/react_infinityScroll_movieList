@@ -11,7 +11,7 @@ export interface Props {
   handleModal: () => void;
   handleSubmit: () => void;
   title: string;
-  content: string;
+  content?: string;
   actionLabel?: string;
 }
 
