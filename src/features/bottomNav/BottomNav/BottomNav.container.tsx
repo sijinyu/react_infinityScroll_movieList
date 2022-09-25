@@ -5,9 +5,6 @@ export default function BottomNav() {
   const { value, handleHistoryChagne } = useBottomNav();
 
   return (
-    <BottomNavContainer
-      value={value}
-      handleChange={handleHistoryChagne}
-    ></BottomNavContainer>
+    <BottomNavContainer value={value} handleChange={handleHistoryChagne} />
   );
 }
