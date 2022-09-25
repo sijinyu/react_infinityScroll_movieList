@@ -6,7 +6,8 @@
       "@routers": ["./src/routers"],
       "@components": ["./src/components"],
       "@common/*": ["./src/common/*"],
-      "@lib/*": ["./src/lib/*"]
+      "@lib/*": ["./src/lib/*"],
+      "@store/*": ["./src/store/*"]
     }
   }
 }
