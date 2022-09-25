@@ -1,16 +1,12 @@
 import React from "react";
 import { Box, Stack } from "@mui/material";
 import { SearchBar } from "@components";
-import { useMovieInifinityList } from "./hooks/useMovieInifinityList";
 import MovieItem from "../MovieItem";
 import MovieListSkeleton from "../MovieItem/skeleton/MovieItem.skeleton";
-import { useSearch } from "./hooks/useSearch";
-import { AlertModal } from "src/components/AlertModal";
-// import { useModalStore } from "@features/store";
-// import { pageConstant } from "@common/constants";
+import useSearch from "./hooks/useSearch";
+import useMovieInifinityList from "./hooks/useMovieInifinityList";
 
 export default function MovieList() {
-  //   const { openModal } = useModalStore();
   const {
     keyword,
     handleSearchChange,
@@ -18,35 +14,32 @@ export default function MovieList() {
     isPending,
     searchValue,
   } = useSearch();
-  const { isFetching, movieList, ref, errorMessage } =
+
+  const { isFetching, ref, errorMessage, movieList } =
     useMovieInifinityList(keyword);
+
   return (
     <Stack justifyContent={"space-between"} display="flex" mt="70px">
       <Box>
-        <SearchBar
-          loading={isPending}
-          value={searchValue}
-          handleClick={handleSearchClick}
-          handleChange={handleSearchChange}
-        />
+        {
+          <SearchBar
+            loading={isPending}
+            value={searchValue}
+            handleClick={handleSearchClick}
+            handleChange={handleSearchChange}
+          />
+        }
       </Box>
-      <AlertModal show titl="asd" />
       <Box mt={4}>
-        {errorMessage}
+        {movieList.length > 0 ? errorMessage : "검색결과가 없습니다."}
         {!errorMessage &&
           movieList?.map((movie) => {
-            return (
-              <MovieItem
-                movie={movie}
-                handleClick={function (): {} {
-                  throw new Error("Function not implemented.");
-                }}
-              />
-            );
+            return <MovieItem movie={movie} key={movie?.imdbID} />;
           })}
         {isFetching && <MovieListSkeleton />}
       </Box>
-      <Box justifyContent={"flex-end"} height="100px" ref={ref}></Box>
+
+      <Box justifyContent={"flex-end"} height="100px" ref={ref} />
     </Stack>
   );
 }
