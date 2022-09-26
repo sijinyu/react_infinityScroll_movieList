@@ -1,11 +1,10 @@
-import React from 'react'
-import { render, screen } from '@testing-library/react'
-import Container from './index';
+import React from "react";
+import { render } from "@testing-library/react";
+import Container from "./index";
 
-describe('<Container />', () => {
-  it('shows children', () => {
-    render(<Container>test</Container>);
-    expect(screen.getByText('test')).toBeInTheDocument()
-    
+describe("<Container />", () => {
+  it("shows children", () => {
+    const { getByText } = render(<Container>test</Container>);
+    getByText("test");
   });
 });
