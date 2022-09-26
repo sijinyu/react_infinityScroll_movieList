@@ -33,14 +33,13 @@ export default function MovieList() {
         }
       </Box>
       <Box mt={4}>
-        {!isFetching && errorMessage}
+        {movieList.length > 0 ? errorMessage : "검색결과가 없습니다."}
         {!errorMessage &&
           movieList?.map((movie) => {
             return <MovieItem movie={movie} key={movie?.imdbID} />;
           })}
-        {isFetching && <MovieListSkeleton />}
       </Box>
-
+      {isFetching && <MovieListSkeleton />}
       <Box justifyContent={"flex-end"} height="100px" ref={ref} />
     </Stack>
   );

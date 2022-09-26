@@ -7,7 +7,6 @@ import { useRecoilState } from "recoil";
 import http from "@lib/axios";
 
 const messageEnToKr = [
-  { message: "Movie not found!", krMessage: "검색 결과가 없습니다." },
   {
     message: "Too many results.",
     krMessage: "검색 결과가 너무 많습니다. 자세히 적어주세요. ",
@@ -19,7 +18,7 @@ const useMovieInifinityList = (query: string) => {
   const observerRef = useRef<IntersectionObserver>();
   const boxRef = useRef<HTMLDivElement>(null);
   const resultMessage = useRef("");
-  const [error, setError] = useState("검색 결과가 없습니다.");
+  const [error, setError] = useState("");
   const [movieList, setMovieList] =
     useRecoilState<MovieListModel[]>(movieListState);
 
@@ -57,8 +56,7 @@ const useMovieInifinityList = (query: string) => {
         if (Response === "False") {
           resultMessage.current = Error;
         }
-        if (pageParam === 1) {
-        }
+
         handleCurrentCount(Search?.length, movieList?.length);
 
         return {
