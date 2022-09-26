@@ -1,8 +1,10 @@
+import { searchState } from "@store/search";
+import { useRecoilState } from "recoil";
 import React, { useState, useCallback, useTransition } from "react";
 
 const useSearch = () => {
-  const [searchValue, setSearchValue] = useState<string>("");
-  const [keyword, setKeyword] = useState<string>("");
+  const [keyword, setKeyword] = useRecoilState(searchState);
+  const [searchValue, setSearchValue] = useState<string>(keyword);
   const [isPending, setTransition] = useTransition();
 
   const handleSearchChange = useCallback(
@@ -13,10 +15,12 @@ const useSearch = () => {
     [searchValue]
   );
 
-  const handleSearchClick = () =>
+  const handleSearchClick = () => {
+    window.scrollTo(0, 0);
     setTransition(() => {
       setKeyword(searchValue);
     });
+  };
 
   return {
     keyword,
