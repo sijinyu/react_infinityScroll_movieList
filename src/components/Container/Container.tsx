@@ -6,9 +6,8 @@ interface ContainerProps {
 }
 
 export const ContainerBase = styled.div`
-  padding: 30px 60px;
+  padding: 30px 60px 120px;
   display: flex;
-  height: 100%;
   margin: 0 auto;
   flex-direction: column;
 `;
