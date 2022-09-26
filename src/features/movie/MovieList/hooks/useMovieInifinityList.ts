@@ -15,11 +15,11 @@ const messageEnToKr = [
 ];
 
 const useMovieInifinityList = (query: string) => {
-  const resultMessage = useRef("");
   const currentCount = useRef(0);
   const observerRef = useRef<IntersectionObserver>();
   const boxRef = useRef<HTMLDivElement>(null);
-  const [error, setError] = useState("");
+  const resultMessage = useRef("");
+  const [error, setError] = useState("검색 결과가 없습니다.");
   const [movieList, setMovieList] =
     useRecoilState<MovieListModel[]>(movieListState);
 
@@ -57,7 +57,8 @@ const useMovieInifinityList = (query: string) => {
         if (Response === "False") {
           resultMessage.current = Error;
         }
-
+        if (pageParam === 1) {
+        }
         handleCurrentCount(Search?.length, movieList?.length);
 
         return {

@@ -19,6 +19,7 @@ export default function MovieList() {
   const { isFetching, ref, errorMessage, movieList } =
     useMovieInifinityList(keyword);
   useScroll();
+
   return (
     <Stack justifyContent={"space-between"} display="flex" mt="70px">
       <Box>
@@ -32,7 +33,7 @@ export default function MovieList() {
         }
       </Box>
       <Box mt={4}>
-        {movieList.length > 0 ? errorMessage : "검색결과가 없습니다."}
+        {!isFetching && errorMessage}
         {!errorMessage &&
           movieList?.map((movie) => {
             return <MovieItem movie={movie} key={movie?.imdbID} />;
