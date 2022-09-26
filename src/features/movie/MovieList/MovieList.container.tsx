@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Stack } from "@mui/material";
 import { SearchBar } from "@components";
 import MovieItem from "../MovieItem";
 import MovieListSkeleton from "../MovieItem/skeleton/MovieItem.skeleton";
 import useSearch from "./hooks/useSearch";
 import useMovieInifinityList from "./hooks/useMovieInifinityList";
+import useScroll from "@common/hooks/useScroll";
 
 export default function MovieList() {
   const {
@@ -17,7 +18,7 @@ export default function MovieList() {
 
   const { isFetching, ref, errorMessage, movieList } =
     useMovieInifinityList(keyword);
-
+  useScroll();
   return (
     <Stack justifyContent={"space-between"} display="flex" mt="70px">
       <Box>
