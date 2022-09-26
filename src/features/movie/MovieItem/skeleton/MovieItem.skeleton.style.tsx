@@ -1,5 +1,5 @@
 import { styled } from "@mui/material";
-import SkeletonBase from "src/components/SkeletonBase";
+import { SkeletonBase } from "@components";
 import { Container } from "../MovieItem.style";
 
 const ContainerSkeleton = styled(Container)`

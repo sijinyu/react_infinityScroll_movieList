@@ -3,7 +3,7 @@ import { Box, Typography } from "@mui/material";
 import * as S from "./MovieItem.style";
 import { MovieListModel } from "../MovieList/model";
 import useMovieItem from "./hooks/useMovieItem";
-import { AlertModal } from "src/components/AlertModal";
+import { AlertModal } from "@components";
 import useModal from "@common/hooks/useModal";
 
 interface Props {
