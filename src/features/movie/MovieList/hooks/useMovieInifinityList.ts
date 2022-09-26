@@ -72,7 +72,6 @@ const useMovieInifinityList = (query: string) => {
         setError(handleMessageEnToKr(resultMessage.current));
       }
     },
-
     {
       enabled: query.length > 0,
       getNextPageParam: (lastPage) => {
@@ -99,8 +98,13 @@ const useMovieInifinityList = (query: string) => {
   );
 
   useEffect(() => {
+    currentCount.current = 0;
+  }, [query]);
+
+  useEffect(() => {
     if (!boxRef.current) return;
     observerRef.current = new IntersectionObserver(intersectionObserver); // IntersectionObserver 새롭게 정의
+
     boxRef.current && observerRef.current.observe(boxRef.current); // boxRef 관찰 시작
     return () => observerRef.current?.disconnect();
   }, [boxRef, intersectionObserver]); // res값이 변경될때마다 실행
