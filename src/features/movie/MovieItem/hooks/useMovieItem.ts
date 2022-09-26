@@ -1,7 +1,7 @@
 import React from "react";
 import { MovieListModel } from "./../../MovieList/model/index";
 import { useRecoilState } from "recoil";
-import { favoritMovieState } from "src/store/movieAndFavorit";
+import { favoritMovieState } from "@store/movieAndFavorit";
 
 const useMovieItem = (movie: MovieListModel) => {
   //recoil store에 저장된 즐겨찾기 리스트 가져오기
