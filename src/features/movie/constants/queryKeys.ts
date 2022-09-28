@@ -3,7 +3,7 @@ class QueryKeys {
   #API_KEY: string;
   constructor() {
     this.#GET = "movies";
-    this.#API_KEY = "92e32667";
+    this.#API_KEY = "비공개";
   }
 
   getGetAll() {
