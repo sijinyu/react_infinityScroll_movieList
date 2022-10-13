@@ -1,6 +1,6 @@
 import { Box, Stack, styled } from "@mui/material";
 
-const Container = styled(Box)`
+const Container = styled(`figure`)`
   &:not(:nth-of-type(1)) {
     margin-top: 20px;
   }
@@ -12,7 +12,7 @@ const innerContainer = styled(Stack)`
   min-height: 400px;
   border-radius: 10px;
 `;
-const ImageSection = styled(`figure`)`
+const ImageSection = styled(`div`)`
   position: relative;
   overflow: hidden;
   max-height: 400px;

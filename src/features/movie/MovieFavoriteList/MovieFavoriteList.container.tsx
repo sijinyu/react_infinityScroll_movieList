@@ -9,9 +9,14 @@ export default function MovieFavoriteList() {
   const movieList = useRecoilValue(favoritMovieState);
   useScroll();
   return (
-    <Stack justifyContent={"space-between"} display="flex" mt="70px">
+    <Stack
+      justifyContent={"space-between"}
+      display="flex"
+      mt="70px"
+      component="section"
+    >
       <Typography variant="h3">내 즐겨찾기</Typography>
-      <Box>
+      <Box component="article">
         {movieList?.map((movie) => {
           return <MovieItem movie={movie} key={movie?.imdbID} />;
         })}

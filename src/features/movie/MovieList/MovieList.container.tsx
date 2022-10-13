@@ -21,7 +21,12 @@ export default function MovieList() {
   useScroll();
 
   return (
-    <Stack justifyContent={"space-between"} display="flex" mt="70px">
+    <Stack
+      justifyContent={"space-between"}
+      display="flex"
+      mt="70px"
+      component="section"
+    >
       <Box>
         {
           <SearchBar
@@ -32,7 +37,7 @@ export default function MovieList() {
           />
         }
       </Box>
-      <Box mt={4}>
+      <Box mt={4} component="article">
         {movieList.length > 0 ? errorMessage : "검색결과가 없습니다."}
         {!errorMessage &&
           movieList?.map((movie) => {
@@ -40,7 +45,12 @@ export default function MovieList() {
           })}
       </Box>
       {isFetching && <MovieListSkeleton />}
-      <Box justifyContent={"flex-end"} height="100px" ref={ref} />
+      <Box
+        justifyContent={"flex-end"}
+        height="100px"
+        ref={ref}
+        component="article"
+      />
     </Stack>
   );
 }

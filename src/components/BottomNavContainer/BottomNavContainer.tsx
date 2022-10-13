@@ -13,7 +13,7 @@ interface Props {
 
 export default function BottomNavContainer({ value, handleChange }: Props) {
   return (
-    <S.Container>
+    <S.Container component="nav">
       <BottomNavigation showLabels value={value} onChange={handleChange}>
         <BottomNavigationAction
           label="영화"
