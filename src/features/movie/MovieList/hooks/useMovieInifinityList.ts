@@ -5,6 +5,7 @@ import moviesQueryKeysConstant from "../../constants/queryKeys";
 import { movieListState } from "@store/movieAndFavorit";
 import { useRecoilState } from "recoil";
 import http from "@lib/axios";
+import { AxiosError } from "axios";
 
 const messageEnToKr = [
   {
@@ -65,7 +66,7 @@ const useMovieInifinityList = (query: string) => {
           // 현재 보여지는 리스트 수보다 총 리스트 아이템 수 보다 크거나 같을 시 인피니트 스크롤 중단
           isLast: currentCount.current >= Number(totalResults),
         };
-      } catch (error: any) {
+      } catch (error: AxiosError) {
         console.error("GET /movies error 발생! catch", error);
       } finally {
         setError(handleMessageEnToKr(resultMessage.current));
